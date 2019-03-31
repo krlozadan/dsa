@@ -7,3 +7,4 @@ In this repository you can find my approach implementing different data structur
 This is the list of implemented Data Structures so far:
 
 - [Queue](./data-structures/queue.js)
+- [Stack](./data-structures/stack.js)
