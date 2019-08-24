@@ -1,27 +1,22 @@
 // Linear data structure which follows the order of operations in the form of "Last In First Out" (LIFO)
-class Stack {
-    constructor() {
-        this.stack = [];
-    }
-    push(item) {
-        this.stack.push(item);
-    }
-    pop() {
-        if (this.isEmpty()) {
-            return null;
+module.exports = function createStack() {
+    const stack = [];
+    return {
+        push(item) {
+            stack.push(item);
+            console.log(stack);
+        },
+        pop() {
+            return stack.pop();
+        },
+        peek() {
+            return stack[stack.length - 1];
+        },
+        get length() {
+            return stack.length;
+        },
+        isEmpty() {
+            return stack.length === 0;
         }
-        return this.stack.pop();
-    }
-    peek() {
-        if (this.isEmpty()) {
-            return null;
-        }
-        return this.stack[this.stack.length - 1];
-    }
-    get length() {
-        return this.stack.length;
-    }
-    isEmpty() {
-        return this.stack.length == 0;
     }
 }

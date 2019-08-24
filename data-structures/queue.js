@@ -1,27 +1,21 @@
 // Linear data structure which follows the order of operations in the form of "First In First Out" (FIFO)
-class Queue {
-    constructor() {
-        this.queue = [];
-    }
-    enqueue(item) {
-        this.queue.unshift(item);
-    }
-    dequeue() {
-        if (this.isEmpty()) {
-            return null;
+module.exports = function createQueue() {
+    const queue = [];
+    return {
+        enqueue(item) {
+            queue.unshift(item);
+        },
+        dequeue() {
+            return queue.pop();
+        },
+        peek() {
+            return queue[queue.length - 1];
+        },
+        get length() {
+            return queue.length;
+        },
+        isEmpty() {
+            return queue.length === 0;
         }
-        return this.queue.pop();
-    }
-    peek() {
-        if (this.isEmpty()) {
-            return null;
-        }
-        return this.queue[this.queue.length - 1];
-    }
-    get length() {
-        return this.queue.length;
-    }
-    isEmpty() {
-        return this.queue.length == 0;
     }
 }
