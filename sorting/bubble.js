@@ -1,6 +1,6 @@
 function bubbleSort(array) {
 
-    let sorted = true;
+    let sorted;
     let rightEndIndex = array.length - 1;
     do {
         sorted = true;
@@ -11,12 +11,10 @@ function bubbleSort(array) {
                 array[i + 1] = array[i];
                 array[i] = temp;
             }
-            console.count("Calls");
         }
         rightEndIndex--;
-    } while (!sorted)
-    return array;
+    } while (!sorted);
 }
 
 const numbers = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
-console.log(bubbleSort(numbers));
+bubbleSort(numbers);
